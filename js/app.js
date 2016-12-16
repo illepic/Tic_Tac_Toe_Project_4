@@ -1,5 +1,8 @@
+
+
 (function(){
-  console.log("Inside the IIFE!");
+  //console.log("Inside the IIFE!");
+  "use strict";
 
   //Hides the board to start the game
   var hideBoard = document.getElementById('board');
