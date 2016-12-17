@@ -3,5 +3,5 @@ var Player = function(name, symbol){
   this.symbol = symbol;
 };
 
-playerOne = ("Super Man", "x" );
-playerTwo = ("Bat Man", "o" );
+playerOne = ("Super Man", "X" );
+playerTwo = ("Bat Man", "O" );
