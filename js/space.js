@@ -1,7 +1,8 @@
-var Space = function(position, dom) {
+var Space = function(position, dom, doTurn) {
   this.position = position;
   this.dom = dom;
   this.symbol = '';
+  this.doTurn = doTurn;
 
   var space = this;
   this.dom.addEventListener('click', function(event) {
@@ -10,10 +11,10 @@ var Space = function(position, dom) {
 };
 
 Space.prototype.setContent = function(content) {
+  var activePlayerSymbol = this.doTurn();
+
   if (!this.symbol) {
-    this.symbol = content;
+    this.symbol = activePlayerSymbol;
     this.dom.innerHTML = this.symbol;
   }
-
-  console.log(this);
 }

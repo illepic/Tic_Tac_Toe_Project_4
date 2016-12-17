@@ -1,8 +1,18 @@
 var Game = function(playerOne, playerTwo) {
   this.playerOne = playerOne;
   this.playerTwo = playerTwo;
-  this.board = new Board();
-  this.currentPlayer = playerOne;
+  this.currentPlayer = playerTwo;
+  this.spaces = [];
+
+  var game = this;
+  var doTurn = function() {
+    return game.currentPlayer.symbol;
+  };
+
+  for(var i = 0; i < 9; i++){
+    var dom = document.getElementById('box-' + i);
+    this.spaces.push(new Space(i, dom, doTurn));
+  }
 };
 
 Game.prototype.newGame = function () {
